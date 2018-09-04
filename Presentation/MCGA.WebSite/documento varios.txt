@@ -2,3 +2,8 @@ administrador: atencion y profesional.... todo
 usuario/paciente (registrar y sacar turno) antes de sacar el 1er turno que se complete los demas datos y recien ahi lo habilito
 secretaria/administrativo: puedo cargar turnos y afiliados
 medico/dosctor: cargar agenda y atencion
+
+
+ver plantillas T4
+
+Fansi Box: 
