@@ -7,3 +7,29 @@ medico/dosctor: cargar agenda y atencion
 ver plantillas T4
 
 Fansi Box: 
+
+TipoDia
+ Process
+ Component - Busines
+ DAC - Data access component
+
+  
+
+  El profesor dice que la interfaz debe explicarse sola
+
+  nuget log4net
+  exportar listado de turno por dia en excel: FreeSpire.XLS
+  Angular
+  pluralsight - cursos
+
+  Carrousel
+  hover
+  tooltip
+  popopup 24 de septiembre nos mudamos a nuestras nuevas oficinas
+  google font - como instalar familias de fuentes
+  
+  
+  PARA VER parala clase que viene
+  usar www.seoptimer.com
+  google Analitycs
+  sitemap
