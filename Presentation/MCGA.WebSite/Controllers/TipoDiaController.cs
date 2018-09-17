@@ -11,12 +11,13 @@ namespace MCGA.WebSite.Controllers
 {
     public class TipoDiaController : Controller
     {
-        private MedicureContext db = new MedicureContext();
+        //private MedicureContext db = new MedicureContext();
 
         // GET: TipoDia
         public ActionResult Index()
         {
-            return View(db.TipoDia.ToList());
+            //return View(db.TipoDia.ToList());
+            return View("");
         }
 
         // GET: TipoDia/Details/5
@@ -26,12 +27,13 @@ namespace MCGA.WebSite.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TipoDia tipoDia = db.TipoDia.Find(id);
-            if (tipoDia == null)
-            {
-                return HttpNotFound();
-            }
-            return View(tipoDia);
+            //TipoDia tipoDia = db.TipoDia.Find(id);
+            //if (tipoDia == null)
+            //{
+            //    return HttpNotFound();
+            //}
+            //return View(tipoDia);
+            return View("");
         }
 
         // GET: TipoDia/Create
@@ -45,12 +47,12 @@ namespace MCGA.WebSite.Controllers
         // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,descripcion")] TipoDia tipoDia)
+        public ActionResult Create([Bind(Include = "Id,descripcion")] Object tipoDia)
         {
             if (ModelState.IsValid)
             {
-                db.TipoDia.Add(tipoDia);
-                db.SaveChanges();
+                //db.TipoDia.Add(tipoDia);
+                //db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
@@ -64,12 +66,12 @@ namespace MCGA.WebSite.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TipoDia tipoDia = db.TipoDia.Find(id);
-            if (tipoDia == null)
-            {
-                return HttpNotFound();
-            }
-            return View(tipoDia);
+            //TipoDia tipoDia = db.TipoDia.Find(id);
+            //if (tipoDia == null)
+            //{
+            //    return HttpNotFound();
+            //}
+            return View("");
         }
 
         // POST: TipoDia/Edit/5
@@ -77,12 +79,12 @@ namespace MCGA.WebSite.Controllers
         // más información vea http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,descripcion")] TipoDia tipoDia)
+        public ActionResult Edit([Bind(Include = "Id,descripcion")] Object tipoDia)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(tipoDia).State = EntityState.Modified;
-                db.SaveChanges();
+                //db.Entry(tipoDia).State = EntityState.Modified;
+                //db.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(tipoDia);
@@ -95,12 +97,12 @@ namespace MCGA.WebSite.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            TipoDia tipoDia = db.TipoDia.Find(id);
-            if (tipoDia == null)
-            {
-                return HttpNotFound();
-            }
-            return View(tipoDia);
+           // TipoDia tipoDia = db.TipoDia.Find(id);
+            //if (tipoDia == null)
+            //{
+            //    return HttpNotFound();
+            //}
+            return View("");
         }
 
         // POST: TipoDia/Delete/5
@@ -108,9 +110,9 @@ namespace MCGA.WebSite.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            TipoDia tipoDia = db.TipoDia.Find(id);
-            db.TipoDia.Remove(tipoDia);
-            db.SaveChanges();
+            //TipoDia tipoDia = db.TipoDia.Find(id);
+            //db.TipoDia.Remove(tipoDia);
+            //db.SaveChanges();
             return RedirectToAction("Index");
         }
 
@@ -118,7 +120,7 @@ namespace MCGA.WebSite.Controllers
         {
             if (disposing)
             {
-                db.Dispose();
+                //db.Dispose();
             }
             base.Dispose(disposing);
         }

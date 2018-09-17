@@ -1,16 +1,25 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Mi aplicación ASP.NET</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
+    <link href="~/Plantilla/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Plantilla/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="~/Plantilla/plugins/cubeportfolio/css/cubeportfolio.min.css">
+    <link href="~/Plantilla/css/nivo-lightbox.css" rel="stylesheet" />
+    <link href="~/Plantilla/css/nivo-lightbox-theme/default/default.css" rel="stylesheet" type="text/css" />
+    <link href="~/Plantilla/css/owl.carousel.css" rel="stylesheet" media="screen" />
+    <link href="~/Plantilla/css/owl.theme.css" rel="stylesheet" media="screen" />
+    <link href="~/Plantilla/css/animate.css" rel="stylesheet" />
+    <link href="~/Plantilla/css/style.css" rel="stylesheet">
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    @*<div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -29,7 +38,64 @@
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
-    </div>
+    </div>*@
+
+
+
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="top-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 col-md-6">
+                        <p class="bold text-left">Monday - Saturday, 8am to 10pm </p>
+                    </div>
+                    <div class="col-sm-6 col-md-6">
+                        <p class="bold text-right">Call us now +62 008 65 001</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container navigation">
+
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <img src="~/Plantilla/img/logo.png" alt="" width="150" height="40" />
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active">@Html.ActionLink("Inicio", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
+                    <li><a href="#facilities">Facilities</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="badge custom-badge red pull-right">Extra</span>More <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="index.html">Home CTA</a></li>
+                            <li><a href="index-form.html">Home Form</a></li>
+                            <li><a href="index-video.html">Home video</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+
+
+
+
+
+
     <div class="container body-content">
         @RenderBody()
         <hr />
@@ -40,6 +106,19 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    <!-- Core JavaScript Files -->
+    <script src="~/Plantilla/js/jquery.min.js"></script>
+    <script src="~/Plantilla/js/bootstrap.min.js"></script>
+    <script src="~/Plantilla/js/jquery.easing.min.js"></script>
+    <script src="~/Plantilla/js/wow.min.js"></script>
+    <script src="~/Plantilla/js/jquery.scrollTo.js"></script>
+    <script src="~/Plantilla/js/jquery.appear.js"></script>
+    <script src="~/Plantilla/js/stellar.js"></script>
+    <script src="~/Plantilla/plugins/cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
+    <script src="~/Plantilla/js/owl.carousel.min.js"></script>
+    <script src="~/Plantilla/js/nivo-lightbox.min.js"></script>
+    <script src="~/Plantilla/js/custom.js"></script>
+
     @RenderSection("scripts", required: false)
 </body>
 </html>
