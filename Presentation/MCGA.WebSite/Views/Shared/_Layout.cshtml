@@ -8,91 +8,116 @@
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
-    <link href="~/Plantilla/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="~/Plantilla/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="~/Plantilla/plugins/cubeportfolio/css/cubeportfolio.min.css">
-    <link href="~/Plantilla/css/nivo-lightbox.css" rel="stylesheet" />
-    <link href="~/Plantilla/css/nivo-lightbox-theme/default/default.css" rel="stylesheet" type="text/css" />
-    <link href="~/Plantilla/css/owl.carousel.css" rel="stylesheet" media="screen" />
-    <link href="~/Plantilla/css/owl.theme.css" rel="stylesheet" media="screen" />
-    <link href="~/Plantilla/css/animate.css" rel="stylesheet" />
-    <link href="~/Plantilla/css/style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,400i,700,700i,900,900i" rel="stylesheet">
 </head>
 <body>
     @*<div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Nombre de aplicación", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
-            </div>
-        </div>
-    </div>*@
-
-
-
-    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
-        <div class="top-area">
             <div class="container">
-                <div class="row">
-                    <div class="col-sm-6 col-md-6">
-                        <p class="bold text-left">Monday - Saturday, 8am to 10pm </p>
-                    </div>
-                    <div class="col-sm-6 col-md-6">
-                        <p class="bold text-right">Call us now +62 008 65 001</p>
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Nombre de aplicación", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+                        <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
+                    </ul>
+                    @Html.Partial("_LoginPartial")
+                </div>
+            </div>
+        </div>*@
+
+    <div class="top-header">
+        <!-- top header -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-12"><a class="logo" href="index.html"><img src="images/logo.jpg" alt=""></a> </div>
+                <div class="col-md-9 hidden-sm hidden-xs">
+                    <div class="top-link">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <i class="fa fa-clock-o"></i>Mon to sat: 10:00am to 6:00pm
+                            </div>
+                            <div class="col-md-3">
+                                <i class="fa fa-phone"></i> <a href="cantact-us.html">+91 123 4567 789</a>
+                            </div>
+                            <div class="col-md-3">
+                                <i class="fa fa-envelope-o"></i> <a href="cantact-us.html">info@cardio.com</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="container navigation">
+    </div>
 
-            <div class="navbar-header page-scroll">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
-                    <i class="fa fa-bars"></i>
-                </button>
-                <a class="navbar-brand" href="index.html">
-                    <img src="~/Plantilla/img/logo.png" alt="" width="150" height="40" />
-                </a>
-            </div>
 
-            <!--  Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
-                <ul class="nav navbar-nav">
-                    <li class="active">@Html.ActionLink("Inicio", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
-                    <li><a href="#facilities">Facilities</a></li>
-                    <li><a href="#pricing">Pricing</a></li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="badge custom-badge red pull-right">Extra</span>More <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="index.html">Home CTA</a></li>
-                            <li><a href="index-form.html">Home Form</a></li>
-                            <li><a href="index-video.html">Home video</a></li>
-                        </ul>
-                    </li>
+
+    <div class="intro-section">
+        <!-- intro section -->
+        <div class="">
+            <!-- navigation-transparent -->
+            <div id="sticky-wrapper" class="sticky-wrapper" style="height: 50px;">
+                <div class="header" style="">
+                    <!-- navigation -->
+                    <div class="container">
+                        <div class="row">
+
+                            <div class="col-md-10 col-sm-12">
+                                <div id="navigation" class="navigation">
+                                    <div id="menu-button">Menu</div>
+                                    <ul>
+                                        <li>@Html.ActionLink("Inicio", "Index", "Home", new { @class = "animsition-link" })</li>
+                                        @*<li class="has-sub">
+                <span class="submenu-button"></span><a href="service-list.html" title="Service" class="animsition-link">Service List</a>
+                <ul>
+                    <li><a href="service-list.html" title="Service List">Service List</a></li>
+                    <li><a href="service-detail.html" title="Service Detail">Service Detail</a></li>
                 </ul>
-                @Html.Partial("_LoginPartial")
+            </li>
+            <li class="has-sub">
+                <span class="submenu-button"></span><a href="blog.html" title="Blog" class="animsition-link">Blog</a>
+                <ul>
+                    <li><a href="blog.html" title="Blog" class="animsition-link">Blog</a></li>
+                    <li><a href="blog-single.html" title="Blog Single" class="animsition-link">Blog Single</a></li>
+                </ul>
+            </li>*@
+                                        <li>@Html.ActionLink("Acerca de", "About", "Home", new { @class = "animsition-link" })</li>
+                                        <li>@Html.ActionLink("Contacto", "Contact", "Home", new { @class = "animsition-link" })</li>
+                                    </ul>
+                                    @Html.Partial("_LoginPartial")
+                                </div>
+                            </div>
+                            <div class="col-md-2 hidden-sm hidden-xs navigation-search">
+                                <a href="#"><i class="fa fa-search"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <!-- /.navbar-collapse -->
         </div>
-        <!-- /.container -->
-    </nav>
+        <!-- /.navigation -->
 
-
-
-
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 col-sm-6">
+                    <div class="intro-caption">
+                        <!-- intro caption -->
+                        <h1 class="intro-title">Experts in Heart Health</h1>
+                        <p class="mb40">Your health is our top priority with comprehensive, affordable<br> medical health care.</p>
+                        <a href="#" class="btn btn-default">make an appointment</a>
+                    </div>
+                    <!-- /.intro caption -->
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
@@ -106,19 +131,7 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-    <!-- Core JavaScript Files -->
-    <script src="~/Plantilla/js/jquery.min.js"></script>
-    <script src="~/Plantilla/js/bootstrap.min.js"></script>
-    <script src="~/Plantilla/js/jquery.easing.min.js"></script>
-    <script src="~/Plantilla/js/wow.min.js"></script>
-    <script src="~/Plantilla/js/jquery.scrollTo.js"></script>
-    <script src="~/Plantilla/js/jquery.appear.js"></script>
-    <script src="~/Plantilla/js/stellar.js"></script>
-    <script src="~/Plantilla/plugins/cubeportfolio/js/jquery.cubeportfolio.min.js"></script>
-    <script src="~/Plantilla/js/owl.carousel.min.js"></script>
-    <script src="~/Plantilla/js/nivo-lightbox.min.js"></script>
-    <script src="~/Plantilla/js/custom.js"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     @RenderSection("scripts", required: false)
 </body>
 </html>

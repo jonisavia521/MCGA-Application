@@ -10,7 +10,7 @@ using MCGA.WebSite.Models;
 
 namespace MCGA.WebSite.Controllers
 {
-    [Authorize]
+    //[Authorize]
     public class ManageController : Controller
     {
         private ApplicationSignInManager _signInManager;

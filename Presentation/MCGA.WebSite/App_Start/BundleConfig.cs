@@ -20,12 +20,23 @@ namespace MCGA.WebSite
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
+                      "~/Scripts/bootstrap.min.js",
+                      "~/Scripts/respond.js",
+                      "~/js/animsition.js",
+                      "~/js/animsition-script.js",
+                      "~/js/jquery.sticky.js",
+                      "~/js/sticky-header.js",
+                      "~/js/back-to-top.js",
+                      "~/js/menumaker.js"
+                      ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/bootstrap.min.css",
+                      "~/Content/site.css",
+                      "~/css/style.css",
+                      "~/css/animsition.min.css",
+                      "~/css/font-awesome.min.css"
+                      ));
         }
     }
 }
