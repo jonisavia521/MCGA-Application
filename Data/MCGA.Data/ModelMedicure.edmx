@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MedicureModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Afiliado">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Apellido" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="TipoDocumentoId" Type="int" Nullable="false" />
+          <Property Name="Numero" Type="nvarchar" MaxLength="25" Nullable="false" />
+          <Property Name="Direccion" Type="nvarchar" MaxLength="255" />
+          <Property Name="Telefono" Type="nvarchar" MaxLength="255" />
+          <Property Name="Email" Type="nvarchar" MaxLength="255" />
+          <Property Name="TipoSexoId" Type="int" Nullable="false" />
+          <Property Name="FechaNacimiento" Type="datetime" Nullable="false" />
+          <Property Name="EstadoCivilId" Type="int" Nullable="false" />
+          <Property Name="NumeroAfiliado" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="PlanId" Type="int" Nullable="false" />
+          <Property Name="Foto" Type="nvarchar" MaxLength="255" />
+          <Property Name="Habilitado" Type="bit" Nullable="false" />
+          <Property Name="createdon" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="createdby" Type="nvarchar" MaxLength="100" />
+          <Property Name="changedon" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="changedby" Type="nvarchar" MaxLength="100" />
+          <Property Name="deletedon" Type="datetime2" Precision="7" />
+          <Property Name="deletedby" Type="nvarchar" MaxLength="100" />
+          <Property Name="isdeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Profesional">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Apellido" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="TipoDocumentoId" Type="int" Nullable="false" />
+          <Property Name="Numero" Type="nvarchar" MaxLength="255" Nullable="false" />
+          <Property Name="Direccion" Type="nvarchar" MaxLength="255" />
+          <Property Name="Telefono" Type="nvarchar" MaxLength="255" />
+          <Property Name="Email" Type="nvarchar" MaxLength="255" />
+          <Property Name="FechaNacimiento" Type="datetime" Nullable="false" />
+          <Property Name="Matricula" Type="nvarchar" MaxLength="255" />
+          <Property Name="Foto" Type="nvarchar" MaxLength="255" />
+          <Property Name="createdon" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="createdby" Type="nvarchar" MaxLength="100" />
+          <Property Name="changedon" Type="datetime2" Precision="7" Nullable="false" />
+          <Property Name="changedby" Type="nvarchar" MaxLength="100" />
+          <Property Name="deletedon" Type="datetime2" Precision="7" />
+          <Property Name="deletedby" Type="nvarchar" MaxLength="100" />
+          <Property Name="isdeleted" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="MedicureModelStoreContainer">
+          <EntitySet Name="Afiliado" EntityType="Self.Afiliado" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Profesional" EntityType="Self.Profesional" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MedicureModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Afiliado">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Apellido" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TipoDocumentoId" Type="Int32" Nullable="false" />
+          <Property Name="Numero" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Direccion" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Telefono" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="TipoSexoId" Type="Int32" Nullable="false" />
+          <Property Name="FechaNacimiento" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EstadoCivilId" Type="Int32" Nullable="false" />
+          <Property Name="NumeroAfiliado" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="PlanId" Type="Int32" Nullable="false" />
+          <Property Name="Foto" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Habilitado" Type="Boolean" Nullable="false" />
+          <Property Name="createdon" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="createdby" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="changedon" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="changedby" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="deletedon" Type="DateTime" Precision="7" />
+          <Property Name="deletedby" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="isdeleted" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Profesional">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nombre" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Apellido" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TipoDocumentoId" Type="Int32" Nullable="false" />
+          <Property Name="Numero" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Direccion" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Telefono" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="FechaNacimiento" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Matricula" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Foto" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="createdon" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="createdby" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="changedon" Type="DateTime" Nullable="false" Precision="7" />
+          <Property Name="changedby" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="deletedon" Type="DateTime" Precision="7" />
+          <Property Name="deletedby" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="isdeleted" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="MedicureEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Afiliado" EntityType="Self.Afiliado" />
+          <EntitySet Name="Profesional" EntityType="Self.Profesional" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MedicureModelStoreContainer" CdmEntityContainer="MedicureEntities">
+          <EntitySetMapping Name="Afiliado">
+            <EntityTypeMapping TypeName="MedicureModel.Afiliado">
+              <MappingFragment StoreEntitySet="Afiliado">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="TipoDocumentoId" ColumnName="TipoDocumentoId" />
+                <ScalarProperty Name="Numero" ColumnName="Numero" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="TipoSexoId" ColumnName="TipoSexoId" />
+                <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+                <ScalarProperty Name="EstadoCivilId" ColumnName="EstadoCivilId" />
+                <ScalarProperty Name="NumeroAfiliado" ColumnName="NumeroAfiliado" />
+                <ScalarProperty Name="PlanId" ColumnName="PlanId" />
+                <ScalarProperty Name="Foto" ColumnName="Foto" />
+                <ScalarProperty Name="Habilitado" ColumnName="Habilitado" />
+                <ScalarProperty Name="createdon" ColumnName="createdon" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="changedon" ColumnName="changedon" />
+                <ScalarProperty Name="changedby" ColumnName="changedby" />
+                <ScalarProperty Name="deletedon" ColumnName="deletedon" />
+                <ScalarProperty Name="deletedby" ColumnName="deletedby" />
+                <ScalarProperty Name="isdeleted" ColumnName="isdeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Profesional">
+            <EntityTypeMapping TypeName="MedicureModel.Profesional">
+              <MappingFragment StoreEntitySet="Profesional">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+                <ScalarProperty Name="TipoDocumentoId" ColumnName="TipoDocumentoId" />
+                <ScalarProperty Name="Numero" ColumnName="Numero" />
+                <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="FechaNacimiento" ColumnName="FechaNacimiento" />
+                <ScalarProperty Name="Matricula" ColumnName="Matricula" />
+                <ScalarProperty Name="Foto" ColumnName="Foto" />
+                <ScalarProperty Name="createdon" ColumnName="createdon" />
+                <ScalarProperty Name="createdby" ColumnName="createdby" />
+                <ScalarProperty Name="changedon" ColumnName="changedon" />
+                <ScalarProperty Name="changedby" ColumnName="changedby" />
+                <ScalarProperty Name="deletedon" ColumnName="deletedon" />
+                <ScalarProperty Name="deletedby" ColumnName="deletedby" />
+                <ScalarProperty Name="isdeleted" ColumnName="isdeleted" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

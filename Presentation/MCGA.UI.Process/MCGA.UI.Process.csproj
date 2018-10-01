@@ -40,9 +40,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AfiliadoProcess.cs" />
+    <Compile Include="ProfesionalProcess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Business\MCGA.Business\MCGA.Business.csproj">
+      <Project>{8b16f38f-32f0-4b6c-848a-404014161af2}</Project>
+      <Name>MCGA.Business</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Shared\MCGA.Entities\MCGA.Entities.csproj">
       <Project>{9CC9E395-4E72-47FC-9F03-C1CA9E69261D}</Project>
       <Name>MCGA.Entities</Name>
