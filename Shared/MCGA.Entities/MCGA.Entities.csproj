@@ -43,6 +43,7 @@
     <Compile Include="Afiliado.cs">
       <DependentUpon>ModelMedicure.tt</DependentUpon>
     </Compile>
+    <Compile Include="Meta\ProfesionalMetadata.cs" />
     <Compile Include="ModelMedicure.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

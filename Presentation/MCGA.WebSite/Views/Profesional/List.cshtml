@@ -1,0 +1,199 @@
+﻿@using PagedList.Mvc;
+@model PagedList.IPagedList<MCGA.Entities.Profesional>
+
+@{
+    ViewBag.Title = "List";
+}
+
+<h2>List</h2>
+
+@*<p>
+        @Html.ActionLink("Create New", "Create")
+    </p>*@
+
+@using (Html.BeginForm("List", "Profesional", FormMethod.Get))
+{
+    <p>
+        @Html.TextBox("SearchString", ViewBag.CurrentFilter as string,
+       new {@class="form-control text-box single-line",
+           autocomplete = "off",
+           placeholder="Ingrese nombre",
+           style="width:350px; display: inline-block;"
+       })
+        <input type="submit" value="Buscar" class="btn btn-info" />
+    </p>
+}
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.Raw("Nombre")
+        </th>
+        <th>
+            @Html.Raw("Apellido")
+        </th>
+        <th>
+            @Html.Raw("TipoDocumentoId")
+        </th>
+        <th>
+            @Html.Raw("Numero")
+        </th>
+        <th>
+            @Html.Raw("Direccion")
+        </th>
+        <th>
+            @Html.Raw("Telefono")
+        </th>
+        <th>
+            @Html.Raw("Email")
+        </th>
+        <th>
+            @Html.Raw("FechaNacimiento")
+        </th>
+        <th>
+            @Html.Raw("Matricula")
+        </th>
+        <th>
+            @Html.Raw("Foto")
+        </th>
+        <th>
+            @Html.Raw("createdon")
+        </th>
+        <th>
+            @Html.Raw("createdby")
+        </th>
+        <th>
+            @Html.Raw("changedon")
+        </th>
+        <th>
+            @Html.Raw("changedby")
+        </th>
+        <th>
+            @Html.Raw("deletedon")
+        </th>
+        <th>
+            @Html.Raw("deletedby")
+        </th>
+        <th>
+            @Html.Raw("isdeleted")
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Apellido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoDocumentoId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Numero)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Direccion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefono)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaNacimiento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Matricula)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Foto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.createdon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.createdby)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.changedon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.changedby)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.deletedon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.deletedby)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.isdeleted)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
+
+</table>
+
+Pagina @(Model.PageCount < Model.PageNumber ? 0:Model.PageNumber) de @Model.PageCount
+@Html.PagedListPager(Model, page => Url.Action("List", new { page, sortOrder=ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter}))
+
+
+
+
+
+
+
+<div class="_form-horizontal">
+    <div class="form-group">
+        <label for="NombreName" class="control-label col-md-2">Nombre</label>
+        <div class="col-md-10">
+            <input class="form-control text-box single-line" data-val="true" data-val-required="Requerido" id="NombreName" name="NombreName" type="text" value="" placeholder="Ingrese nombre" />
+            <span class="field-validation-valid text-danger" data-valmsg-for="NombreName" data-valmsg-replace="true"></span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="ProfesionalId" class="control-label col-md-2">Profesional Id</label>
+        <div class="col-md-10">
+            <input class="form-control text-box single-line" id="ProfesionalId" type="text" readonly="readonly" />
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+
+    @Scripts.Render("~/bundles/jqueryval")
+    <script>
+    $("#NombreName").autocomplete({
+        autoSelect: true,
+        autoFocus: true,
+        minLength: 1,
+        source: function(request, response){
+            $.ajax({
+                url: '@Url.Action("GetNombres", "Profesional")',
+                datatype: "json",
+                data: { Areas: '', term: request.term },
+                success: function (data) {
+                    response($.map(data, function (val, item) {
+                        return { label: val.Nombre, value: val.Nombre, Id: val.Id };
+                    }));
+                }
+            });
+        },
+        select: function (event, ui) {
+            $("#ProfesionalId").val(ui.item.Id);
+        }
+    });
+    </script>
+}

@@ -6,12 +6,11 @@
 //     Los cambios manuales en este archivo se sobrescribirán si se regenera el código.
 // </auto-generated>
 //------------------------------------------------------------------------------
+using System;
+using System.Collections.Generic;
 
 namespace MCGA.Entities
 {
-    using System;
-    using System.Collections.Generic;
-    
     public partial class Profesional
     {
         public int Id { get; set; }

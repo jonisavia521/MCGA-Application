@@ -9,29 +9,35 @@ namespace MCGA.UI.Process
 {
     public class ProfesionalProcess
     {
+        private MCGA.Business.ProfesionalBi profesionalBi;
+
+        public ProfesionalProcess()
+        {
+            profesionalBi = new Business.ProfesionalBi();
+        }
         public List<Profesional> getProfesionales()
         {
-            throw new NotImplementedException();
+            return profesionalBi.getProfesionales();
         }
 
         public Profesional getProfesional(int? id)
         {
-            throw new NotImplementedException();
+            return profesionalBi.getProfesional(id);
         }
 
-        public void saveProfesional(Profesional profesional)
+        public bool saveProfesional(Profesional profesional)
         {
-            throw new NotImplementedException();
+            return profesionalBi.saveProfesional(profesional);
         }
 
-        public void updateProfesional(Profesional profesional)
+        public bool updateProfesional(Profesional profesional)
         {
-            throw new NotImplementedException();
+            return profesionalBi.updateProfesional(profesional);
         }
 
-        public void deleteProfesional(int id)
+        public bool deleteProfesional(int id)
         {
-            throw new NotImplementedException();
+            return profesionalBi.deleteProfesional(id);
         }
 
       

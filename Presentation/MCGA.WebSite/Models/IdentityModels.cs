@@ -29,5 +29,7 @@ namespace MCGA.WebSite.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<MCGA.Entities.Profesional> Profesionals { get; set; }
     }
 }

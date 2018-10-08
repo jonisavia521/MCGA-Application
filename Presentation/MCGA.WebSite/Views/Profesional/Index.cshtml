@@ -1,13 +1,31 @@
-﻿@model IEnumerable<MCGA.WebSite.Models.ProfesionalVM>
-
+﻿@using MCGA.WebSite.Constants.ProfesionalController
+@model IEnumerable<MCGA.Entities.Profesional>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Indice";
+    ViewBag.Description = "Pagina principal para el ABM de profesionales";
+    ViewBag.Author = Application.Name;
+    ViewBag.ReferrerMode = ReferrerMode.OriginWhenCrossOrigin;
+    ViewBag.TwitterCard = new SummaryLargeImageTwitterCard("@TwitterCard");
+    ViewBag.OpenGraph = new OpenGraphBusiness(
+        ViewBag.Title,
+        new OpenGraphImage(Url.AbsoluteContent("~/images/logo.png")) { Height = 630, Type = ContentType.Png, Width = 1200 },
+        new OpenGraphContactData(Application.StreetAddress, Application.Locality, Application.PostalCode, Application.Country)
+        {
+            Email = Application.Email,
+            Phone = Application.Phone,
+            Website = Url.AbsoluteRouteUrl(ProfesionalControllerRoute.GetIndex)
+        },
+        new OpenGraphLocation(Application.Latitude, Application.Longitude))
+    {
+        Determiner = OpenGraphDeterminer.Blank,
+        SiteName = Application.Name
+    };
 }
 
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Nuevo profesinal", "Create", null, new { @class = "btn btn-sm btn-success" })
 </p>
 <table class="table">
     <tr>
@@ -65,65 +83,66 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nombre)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Apellido)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TipoDocumentoId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Numero)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Direccion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Telefono)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.FechaNacimiento)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Matricula)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Foto)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.createdon)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.createdby)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.changedon)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.changedby)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.deletedon)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.deletedby)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.isdeleted)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Apellido)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TipoDocumentoId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Numero)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Direccion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Telefono)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FechaNacimiento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Matricula)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Foto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.createdon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.createdby)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.changedon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.changedby)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.deletedon)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.deletedby)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.isdeleted)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
 
 </table>

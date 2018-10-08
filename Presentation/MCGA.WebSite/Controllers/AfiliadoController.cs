@@ -15,12 +15,12 @@ namespace MCGA.WebSite.Controllers
 {
     public class AfiliadoController : Controller
     {
-        AfiliadoController()
+        public AfiliadoController()
         {
-            Mapper.Initialize(cfg => {
-                cfg.CreateMap<List<Afiliado>, List<AfiliadoVM>>();
-                cfg.CreateMap<Afiliado, AfiliadoVM>();
-            });
+            //Mapper.Initialize(cfg => {
+            //    cfg.CreateMap<List<Afiliado>, List<AfiliadoVM>>();
+            //    cfg.CreateMap<Afiliado, AfiliadoVM>();
+            //});
         }
         private AfiliadoProcess db = new AfiliadoProcess();
 
@@ -28,8 +28,8 @@ namespace MCGA.WebSite.Controllers
         public ActionResult Index()
         {
             List<Afiliado> afiliadoes = db.getAfiliados();
-            List<AfiliadoVM> afiliadoVM = Mapper.Map<List<AfiliadoVM>>(afiliadoes);
-            return View(afiliadoVM);
+            //List<AfiliadoVM> afiliadoVM = Mapper.Map<List<AfiliadoVM>>(afiliadoes);
+            return View(afiliadoes);
         }
 
         // GET: Afiliado/Details/5
@@ -45,7 +45,7 @@ namespace MCGA.WebSite.Controllers
             {
                 return HttpNotFound();
             }
-            return View(Mapper.Map<AfiliadoVM>(afiliado));
+            return View(afiliado);
         }
 
         // GET: Afiliado/Create
@@ -64,7 +64,7 @@ namespace MCGA.WebSite.Controllers
             if (ModelState.IsValid)
             {
 
-                db.saveAfiliado(Mapper.Map<Afiliado>(afiliado));
+                db.saveAfiliado(afiliado);
                 return RedirectToAction("Index");
             }
 
@@ -83,7 +83,7 @@ namespace MCGA.WebSite.Controllers
             {
                 return HttpNotFound();
             }
-            return View(Mapper.Map<AfiliadoVM>(afiliado));
+            return View(afiliado);
         }
 
         // POST: Afiliado/Edit/5
@@ -95,7 +95,7 @@ namespace MCGA.WebSite.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.updateAfiliado(Mapper.Map<Afiliado>(afiliado));
+                db.updateAfiliado(afiliado);
                 return RedirectToAction("Index");
             }
             return View(afiliado);
@@ -113,7 +113,7 @@ namespace MCGA.WebSite.Controllers
             {
                 return HttpNotFound();
             }
-            return View(Mapper.Map<AfiliadoVM>(afiliado));
+            return View(afiliado);
         }
 
         // POST: Afiliado/Delete/5
